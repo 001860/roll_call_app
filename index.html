@@ -41,6 +41,27 @@
             min-height: 100vh;
         }
 
+        /* ========== 滑动字幕 ========== */
+        .marquee-bar {
+            background: linear-gradient(90deg, #1e3a5f, #2d5a87);
+            color: #fff;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 15s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
         /* ========== 布局 ========== */
         .app-container {
             max-width: 1200px;
@@ -737,6 +758,13 @@
     </style>
 </head>
 <body>
+    <!-- 滑动字幕 -->
+    <div class="marquee-bar">
+        <div class="marquee-content">
+            🔒 本网页数据储存在浏览器中，不向外部设备传输任何数据
+        </div>
+    </div>
+
     <div class="app-container">
         <!-- 顶部标题 -->
         <header class="app-header">
